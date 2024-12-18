@@ -18,7 +18,7 @@ Screenshot of my solution.
 
 ### Links
 
-- Live link :
+- Live link : [Live link](https://bento-grid-xi-mocha.vercel.app/)
 
 ### Built with
 
