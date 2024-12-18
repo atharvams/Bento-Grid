@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+/* root */
+:root {
+  --clr-Purple-100: #dacffc;
+  --clr-Purple-500: #7650dc;
+
+  --clr-Yellow-100: #f9eee1;
+  --clr-Yellow-500: #ffcb6b;
+
+  --clr-White: #ffffff;
+  --clr-Black: #121212;
+
+  --ff-main: "DM Sans", serif;
+  --fs-body: 1.125rem;
+  --fs-heading: 2.3rem;
+
+  --fw-400: 400;
+  --fw-500: 500;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 80%;
+  display: block;
+}
+
+body {
+  font-family: var(--ff-main);
+  font-size: var(--fs-body);
+  padding: 2rem 1rem;
+  background-color: black;
+  line-height: 1.1;
+  font-weight: var(--fw-400);
+}
+
+/* text */
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: var(--fw-500);
+}
+h2 {
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-500);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+small {
+  font-size: var(--fs-body);
+}
+
+/* Utility */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Layout */
+
+.grid-container {
+  margin-inline: auto;
+  display: grid;
+  max-width: 70rem;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 15rem 15rem 15rem;
+  grid-template-areas:
+    "column1 column2 column3"
+    "column1 column2 column3"
+    "column1 column4 column4";
+  gap: 1rem;
+}
+
+.grid-container > * {
+  display: grid;
+}
+
+.col-1 {
+  grid-area: column1;
+}
+.col-2 {
+  grid-area: column2;
+}
+.col-3 {
+  grid-area: column3;
+}
+.col-4 {
+  grid-area: column4;
+}
+
+.inside-element {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.inside-element:nth-child(1) {
+  grid-template-columns: 0.96fr 2fr;
+}
+
+/* ui components */
+.grid-item-element {
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.quicker {
+  place-content: center;
+  background-color: var(--clr-Yellow-100);
+}
+.quicker em {
+  color: var(--clr-Purple-500);
+}
+.quicker img {
+  padding-top: 2rem;
+}
+
+.ai {
+  place-content: center;
+  background-color: var(--clr-Yellow-500);
+}
+
+.ai img {
+  padding-top: 1rem;
+}
+
+.social-media {
+  text-align: center;
+  place-content: center;
+  color: var(--clr-White);
+  background-color: var(--clr-Purple-500);
+}
+
+.social-media img {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  max-width: 13rem;
+  margin-inline: auto;
+}
+
+.manage {
+  position: relative;
+  overflow-x: hidden;
+  padding: 1rem;
+  background-color: var(--clr-White);
+}
+.manage h2 {
+  padding-top: 1rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.manage img {
+  position: relative;
+  right: -2rem;
+  max-width: 100%;
+}
+
+.maintain {
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--clr-Yellow-500);
+}
+
+.maintain h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.maintain img {
+  position: absolute;
+  bottom: -5rem;
+}
+
+.schedule {
+  background-color: var(--clr-Purple-100);
+  overflow: hidden;
+}
+
+.schedule img {
+  max-width: 130%;
+  position: relative;
+  right: -1rem;
+}
+
+.faster {
+  background-color: var(--clr-White);
+}
+
+.followers {
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  place-items: center;
+  color: var(--clr-White);
+  padding: 0;
+  background-color: var(--clr-Purple-500);
+}
+
+.followers img {
+  max-width: 80%;
+}
+.followers h2 {
+  letter-spacing: 0px;
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 950px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15rem 15rem 15rem 15rem;
+    grid-template-areas:
+      "column2 column3"
+      "column2 column3"
+      "column4 column4"
+      "column1 column1";
+  }
+
+  .col-1 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .social-media {
+    text-align: center;
+    place-content: center;
+    color: var(--clr-White);
+    background-color: var(--clr-Purple-500);
+  }
+
+  .social-media h1{
+    font-size: 2.5rem;
+  }
+
+  .social-media img {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    max-width: 10rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "column2"
+      "column3"
+      "column4"
+      "column1";
+    gap: 2rem;
+  }
+  .grid-container > *,
+  .inside-element {
+    gap: 2rem;
+  }
+  .col-1,
+  .inside-element,
+  .inside-element:nth-child(1) {
+    grid-template-columns: 1fr;
+  }
+
+
+  .maintain img {
+    position: relative;
+    bottom: -2rem;
+  }
+  
+  .schedule img{
+    max-width: 100%;
+    left: 0;
+  }
+
+  .followers{
+    text-align: center;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+}
